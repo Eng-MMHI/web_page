@@ -330,6 +330,11 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .nav.hidden {
+            transform: translateY(-100%);
         }
 
         .nav ul {
@@ -1852,6 +1857,45 @@
         document.querySelectorAll('.section').forEach(section => {
             section.style.animationPlayState = 'paused';
             observer.observe(section);
+        });
+
+        // Hide/Show Navigation on Mobile Scroll
+        let lastScrollTop = 0;
+        let isScrolling = false;
+
+        function handleNavScroll() {
+            if (window.innerWidth <= 768) { // Mobile only
+                const nav = document.querySelector('.nav');
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (currentScroll > lastScrollTop && currentScroll > 100) {
+                    // Scrolling down & past header
+                    nav.classList.add('hidden');
+                } else if (currentScroll < lastScrollTop) {
+                    // Scrolling up
+                    nav.classList.remove('hidden');
+                }
+                
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    handleNavScroll();
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
+        });
+
+        // Reset nav visibility on window resize
+        window.addEventListener('resize', () => {
+            const nav = document.querySelector('.nav');
+            if (window.innerWidth > 768) {
+                nav.classList.remove('hidden');
+            }
         });
     </script>
 </body>
