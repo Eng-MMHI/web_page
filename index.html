@@ -188,11 +188,6 @@
             animation-delay: 0.2s;
         }
 
-        .floating-download-btn.portfolio {
-            background: linear-gradient(135deg, #9b59b6, #8e44ad);
-            animation-delay: 0.4s;
-        }
-
         @keyframes bounceIn {
             0% {
                 opacity: 0;
@@ -266,6 +261,25 @@
 
         .download-card.portfolio .download-card-icon {
             color: #9b59b6;
+        }
+
+        .download-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .download-card-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
         }
 
         .download-card h3 {
@@ -1151,9 +1165,6 @@
         <a href="https://drive.google.com/uc?export=download&id=1A9Z4Z92sffe71hI63RLC-gLrc2R0m4Co" class="floating-download-btn cv" target="_blank" title="Download CV">
             <i class="fas fa-file-pdf"></i>
         </a>
-        <a href="https://drive.google.com/uc?export=download&id=1gLL1oOzCxOuGVkRDpIDLk4dcMFH9alEk" class="floating-download-btn portfolio" target="_blank" title="Download Portfolio">
-            <i class="fas fa-chart-bar"></i>
-        </a>
     </div>
 
     <div class="container">
@@ -1237,7 +1248,7 @@
                                 <i class="fas fa-robot"></i>
                             </div>
                             <div class="stat-title">AI Solutions</div>
-                            <div class="stat-description">Developed 8+ AI-powered systems for correspondence analysis, recruitment, and predictive analytics</div>
+                            <div class="stat-description">Developed 8+ AI-powered systems for correspondence analysis, recruitment, predictive analytics, and business intelligence</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-icon">
@@ -1733,7 +1744,7 @@
             <section id="downloads" class="section">
                 <div class="downloads-section">
                     <h2>📄 Download Documents</h2>
-                    <p>Access my complete CV and portfolio of data visualization dashboards showcasing real-world business intelligence solutions.</p>
+                    <p>Access my complete CV and learn about my portfolio of data visualization dashboards showcasing real-world business intelligence solutions.</p>
                     
                     <div class="downloads-grid">
                         <div class="download-card">
@@ -1750,14 +1761,13 @@
 
                         <div class="download-card portfolio">
                             <div class="download-card-icon">
-                                <i class="fas fa-chart-bar"></i>
+                                <i class="fas fa-lock"></i>
                             </div>
                             <h3>Dashboards Portfolio</h3>
-                            <p>Showcase of interactive dashboards and business intelligence solutions I've created for construction and project management industries.</p>
-                            <a href="https://drive.google.com/uc?export=download&id=1gLL1oOzCxOuGVkRDpIDLk4dcMFH9alEk" class="download-card-btn" target="_blank">
-                                <i class="fas fa-download"></i>
-                                Download Portfolio
-                            </a>
+                            <p><strong>Note:</strong> My portfolio contains sensitive business data and proprietary dashboards from real projects. For confidentiality reasons, it cannot be publicly displayed at this time.</p>
+                            <div style="margin-top: 15px; padding: 12px 20px; background: rgba(155, 89, 182, 0.1); color: #8e44ad; border-radius: 8px; font-size: 0.9em; font-weight: 600; text-align: center;">
+                                <i class="fas fa-shield-alt"></i> Available upon request for interviews
+                            </div>
                         </div>
                     </div>
                 </div>
