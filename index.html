@@ -106,6 +106,31 @@
             transform: translateY(-3px);
         }
 
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
         /* Navigation */
         .nav {
             background: #34495e;
@@ -229,6 +254,51 @@
             width: 20px;
         }
 
+        /* Education Section */
+        .education-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 5px solid #27ae60;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .edu-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .edu-institution {
+            font-size: 1.1em;
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .edu-date {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
         /* Experience Section */
         .experience-item {
             background: white;
@@ -277,6 +347,36 @@
         .exp-description {
             color: #555;
             line-height: 1.7;
+        }
+
+        .project-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 3px solid #3498db;
+        }
+
+        .project-details h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .detail-item {
+            display: flex;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #495057;
+            min-width: 80px;
+        }
+
+        .detail-value {
+            color: #6c757d;
         }
 
         .achievements {
@@ -349,7 +449,7 @@
         /* Certifications */
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
@@ -361,6 +461,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border-top: 4px solid #3498db;
+            position: relative;
         }
 
         .cert-card:hover {
@@ -378,6 +479,42 @@
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .cert-issuer {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .cert-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cert-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .cert-status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f39c12;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
         }
 
         /* Projects Section */
@@ -535,7 +672,7 @@
                 gap: 30px;
             }
 
-            .exp-header {
+            .exp-header, .edu-header {
                 flex-direction: column;
                 gap: 15px;
             }
@@ -548,6 +685,14 @@
                 width: 120px;
                 height: 120px;
             }
+
+            .whatsapp-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
         }
 
         /* Animation delays for sections */
@@ -557,9 +702,15 @@
         .section:nth-child(4) { animation-delay: 0.4s; }
         .section:nth-child(5) { animation-delay: 0.5s; }
         .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/201124178993" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <div class="container">
         <!-- Header -->
         <header class="header">
@@ -594,6 +745,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
@@ -644,6 +796,25 @@
                 </div>
             </section>
 
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <div class="edu-header">
+                        <div>
+                            <div class="edu-title">BSc Structural Engineering & Construction Management</div>
+                            <div class="edu-institution">Future University In Egypt (FUE), Fifth District</div>
+                        </div>
+                        <div class="edu-date">2018</div>
+                    </div>
+                    <div class="exp-description">
+                        <p><strong>Graduation Project:</strong> Construction Management - Engineering study of the Mivida project</p>
+                        <p>Comprehensive study covering structural engineering principles, construction project management methodologies, and practical application through real-world project analysis.</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- Experience Section -->
             <section id="experience" class="section">
                 <h2>Professional Experience</h2>
@@ -654,31 +825,43 @@
                             <div class="exp-title">Strategic Planning Lead (AI Business Solution Lead)</div>
                             <div class="exp-company">REDCON Construction Co. S.A.E</div>
                         </div>
-                        <div class="exp-date">Mar 2025 – Present</div>
+                        <div class="exp-date">Dec 2023 – Present</div>
                     </div>
                     <div class="exp-description">
-                        <p>Leading enterprise-level AI solutions design and implementation, focusing on optimizing decision-making, reducing operational costs, and automating analytics workflows using Microsoft Power Platform and Oracle Cloud.</p>
+                        <p>Leading enterprise-level AI solutions design and implementation, focusing on optimizing decision-making, reducing operational costs, and automating analytics workflows using Microsoft Power Platform and Oracle Cloud. My work directly supports core departments including Contracts, Cost Control, Planning, HR, and Administration affairs.</p>
                     </div>
                     <div class="achievements">
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span><strong>Correspondences AI Analysis:</strong> Developed AI model for automatic early warning report generation from project correspondence using historical lessons learned</span>
+                            <span><strong>Correspondences AI Analysis (Contracts Dep):</strong> Developed AI model that reads project correspondence and automatically generates early warning reports using historical lessons learned</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span><strong>Cost Control Intelligence:</strong> Automated monthly cost report review process with centralized dashboard highlighting recurring issues</span>
+                            <span><strong>Cost Control Intelligence:</strong> Automated monthly cost report review process, creating a central dashboard that highlights recurring issues across all projects</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span><strong>Schedule Prediction Engine:</strong> Built predictive model for project completion based on historical Earned Value data</span>
+                            <span><strong>Schedule Prediction Engine (Planning Dep):</strong> Built model that predicts actual project completion based on historical Earned Value data, independent of Primavera's planned finish dates</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span><strong>Risk Forecasting AI Model:</strong> Created economic impact prediction system for long-duration bids using real-time news analysis</span>
+                            <span><strong>ERP Data Readiness (PMO Dep):</strong> Led efforts to analyze Oracle ERP data, prepare it for Microsoft Collaborative environment, and prepare it for use in top management dashboards</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span><strong>Smart Recruitment Platform:</strong> Developed fully AI-powered resume analysis and evaluation system</span>
+                            <span><strong>Risk Forecasting AI Model (Tender Dep):</strong> Built model that anticipates economic impacts on long-duration bids using real-time news analysis and Cost of Resources trend forecasting</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Inventory Optimization Dashboard:</strong> Participated in launching system to monitor idle inventory and support inter-project material transfers, reducing unnecessary procurement</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Smart Recruitment Platform:</strong> Created fully AI-powered resume analysis and evaluation system with automated candidate screening, job matching, and automated interview scheduling capabilities</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Fleet Admin AI Bot:</strong> Developed chatbot connected to company's fleet data, delivering daily and monthly reports on vehicle status and upcoming maintenance</span>
                         </div>
                     </div>
                 </div>
@@ -691,21 +874,44 @@
                         </div>
                         <div class="exp-date">Dec 2023 – Mar 2025</div>
                     </div>
+                    <div class="project-details">
+                        <h4>ZED EAST Project Details:</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Client:</span>
+                            <span class="detail-value">ORA Egypt</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Budget:</span>
+                            <span class="detail-value">+500,000,000 LE</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">PM:</span>
+                            <span class="detail-value">JLL</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Consultant:</span>
+                            <span class="detail-value">ACE (MOHARRAM & BAKHOUM)</span>
+                        </div>
+                    </div>
                     <div class="exp-description">
-                        <p>Led planning team for ZED EAST project (+500M LE budget) utilizing advanced planning techniques and methodologies. Implemented comprehensive progress tracking and target-setting systems.</p>
+                        <p>Led planning team for ZED EAST project utilizing various advanced planning techniques and methodologies. Implemented comprehensive methods for tracking progress percentages and setting monthly and yearly targets. Coordinated planning of materials, labor, and equipment to ensure smooth project execution.</p>
                     </div>
                     <div class="achievements">
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span>Developed semi-automated internal system reducing routine work significantly</span>
+                            <span>Developed comprehensive, semi-automated internal system that significantly reduced routine work</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span>Collaborated with Oracle Partner to implement Primavera EPPM Cloud system</span>
+                            <span>Collaborated alongside external Oracle Partner to build Primavera EPPM Cloud system</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check"></i>
-                            <span>Became system administrator supporting 45+ ongoing projects</span>
+                            <span>Became system administrator supporting planning teams across 45+ ongoing projects</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-check"></i>
+                            <span>Established unified monitoring system enabling top management consolidated overview of all projects</span>
                         </div>
                     </div>
                 </div>
@@ -718,8 +924,27 @@
                         </div>
                         <div class="exp-date">Jan 2023 – Dec 2023</div>
                     </div>
+                    <div class="project-details">
+                        <h4>MARASSI Project Details:</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Client:</span>
+                            <span class="detail-value">EMAAR MISR</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Budget:</span>
+                            <span class="detail-value">+1,100,000,000 LE</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">PM:</span>
+                            <span class="detail-value">Turner Middle East (TIME)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Consultant:</span>
+                            <span class="detail-value">COSMOS</span>
+                        </div>
+                    </div>
                     <div class="exp-description">
-                        <p>Managed residential project planning in Marassi, North Coast (+1.1B LE budget). Introduced innovative electronic systems for daily project supervision and data collection.</p>
+                        <p>Worked on residential project in Marassi, North Coast. Introduced innovative electronic system to tackle daily project supervision challenges. This system facilitated data collection, enabling precise and timely project management. Enhanced productivity providing valuable insights to project management through multiple shared dashboards.</p>
                     </div>
                 </div>
 
@@ -731,8 +956,23 @@
                         </div>
                         <div class="exp-date">Jan 2022 – Dec 2022</div>
                     </div>
+                    <div class="project-details">
+                        <h4>R5 New Capital Project Details:</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Client:</span>
+                            <span class="detail-value">New Administrative Capital Authority</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Budget:</span>
+                            <span class="detail-value">+5,670,000,000 LE</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Consultant:</span>
+                            <span class="detail-value">ECG S.A.</span>
+                        </div>
+                    </div>
                     <div class="exp-description">
-                        <p>Achieved major professional milestone by designing and operating performance monitoring system for all project departments (+5.6B LE budget project).</p>
+                        <p>Achieved largest professional milestone by designing and operating performance monitoring system for all project departments. This system allowed real-time data updates from online servers (Project Website) and internal project servers, providing project manager and project management team with comprehensive insights into project status using Business Intelligence systems.</p>
                     </div>
                 </div>
             </section>
@@ -835,21 +1075,34 @@
                         <div class="cert-icon"><i class="fas fa-certificate"></i></div>
                         <div class="cert-title">Project Management Professional (PMP)®</div>
                         <div class="cert-issuer">Project Management Institute (PMI)</div>
+                        <a href="https://www.credly.com/badges/e2a99105-0333-4723-afc9-28e296c3932e/linked_in_profile" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
                     </div>
                     <div class="cert-card">
                         <div class="cert-icon"><i class="fab fa-google"></i></div>
                         <div class="cert-title">Google Advanced Data Analytics Certificate</div>
                         <div class="cert-issuer">Google Career Certificates</div>
+                        <a href="https://coursera.org/share/13266b20ff839c082b7fbcdcc070b057" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
                     </div>
                     <div class="cert-card">
                         <div class="cert-icon"><i class="fas fa-users"></i></div>
                         <div class="cert-title">PMI Member</div>
                         <div class="cert-issuer">Project Management Institute</div>
+                        <div style="margin-top: 15px; padding: 8px 16px; background: #27ae60; color: white; border-radius: 20px; font-size: 0.85em; font-weight: 600;">
+                            Active Member
+                        </div>
                     </div>
                     <div class="cert-card">
+                        <div class="cert-status">In Preparation</div>
                         <div class="cert-icon"><i class="fas fa-calendar-alt"></i></div>
-                        <div class="cert-title">PMI-SP® (In Preparation)</div>
-                        <div class="cert-issuer">Scheduling Professional</div>
+                        <div class="cert-title">PMI Scheduling Professional (PMI-SP)®</div>
+                        <div class="cert-issuer">Project Management Institute</div>
+                        <div style="margin-top: 15px; padding: 8px 16px; background: #f39c12; color: white; border-radius: 20px; font-size: 0.85em; font-weight: 600;">
+                            Exam Scheduled
+                        </div>
                     </div>
                 </div>
             </section>
@@ -861,18 +1114,18 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-title">ZED EAST Project Management System</div>
-                            <div class="project-subtitle">REDCON Construction</div>
+                            <div class="project-subtitle">REDCON Construction - ORA Egypt</div>
                         </div>
                         <div class="project-content">
                             <div class="project-description">
-                                Comprehensive planning and monitoring system for 500M+ LE residential project. Implemented advanced analytics and automated reporting for all project phases.
+                                Comprehensive planning and monitoring system for 500M+ LE residential project. Implemented advanced analytics and automated reporting for all project phases with Primavera EPPM Cloud integration.
                             </div>
                             <div class="dashboard-preview">
                                 <i class="fas fa-chart-area"></i>
                                 <p>Interactive Project Dashboard<br><small>Real-time progress tracking and analytics</small></p>
                             </div>
                             <div class="project-tech">
-                                <span class="tech-tag">Primavera</span>
+                                <span class="tech-tag">Primavera EPPM</span>
                                 <span class="tech-tag">Power BI</span>
                                 <span class="tech-tag">Oracle Cloud</span>
                                 <span class="tech-tag">Project Management</span>
@@ -883,11 +1136,11 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-title">AI-Powered Correspondence Analysis</div>
-                            <div class="project-subtitle">REDCON Construction</div>
+                            <div class="project-subtitle">REDCON Construction - Contracts Department</div>
                         </div>
                         <div class="project-content">
                             <div class="project-description">
-                                Developed AI model that automatically reads project correspondence and generates early warning reports using machine learning and historical data analysis.
+                                Developed AI model that automatically reads project correspondence and generates early warning reports using machine learning and historical lessons learned data analysis.
                             </div>
                             <div class="dashboard-preview">
                                 <i class="fas fa-robot"></i>
@@ -905,11 +1158,11 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-title">MARASSI Project Analytics</div>
-                            <div class="project-subtitle">Arabian Construction Company</div>
+                            <div class="project-subtitle">Arabian Construction - EMAAR MISR</div>
                         </div>
                         <div class="project-content">
                             <div class="project-description">
-                                Innovative electronic system for daily project supervision and data collection, enhancing productivity through comprehensive analytics and shared dashboards.
+                                Innovative electronic system for daily project supervision and data collection on 1.1B+ LE project, enhancing productivity through comprehensive analytics and shared dashboards.
                             </div>
                             <div class="dashboard-preview">
                                 <i class="fas fa-building"></i>
@@ -927,11 +1180,11 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-title">Smart Recruitment Platform</div>
-                            <div class="project-subtitle">REDCON Construction</div>
+                            <div class="project-subtitle">REDCON Construction - HR Department</div>
                         </div>
                         <div class="project-content">
                             <div class="project-description">
-                                Fully AI-powered resume analysis and evaluation system with automated candidate screening, technical interviews, and job matching capabilities.
+                                Fully AI-powered resume analysis and evaluation system from candidate application to employee selection, with automated interview scheduling and job matching capabilities.
                             </div>
                             <div class="dashboard-preview">
                                 <i class="fas fa-user-tie"></i>
@@ -953,7 +1206,7 @@
                         </div>
                         <div class="project-content">
                             <div class="project-description">
-                                Performance monitoring system for 5.6B+ LE project with real-time data updates from online and internal servers, providing comprehensive Business Intelligence insights.
+                                Performance monitoring system for 5.67B+ LE mega project with real-time data updates from online and internal servers, providing comprehensive Business Intelligence insights.
                             </div>
                             <div class="dashboard-preview">
                                 <i class="fas fa-city"></i>
@@ -975,7 +1228,7 @@
                         </div>
                         <div class="project-content">
                             <div class="project-description">
-                                Developed chatbot connected to company's fleet data, delivering daily and monthly reports on vehicle status and upcoming maintenance schedules.
+                                Developed chatbot connected to company's fleet data, delivering daily and monthly reports on vehicle status and upcoming maintenance schedules with automated alerts.
                             </div>
                             <div class="dashboard-preview">
                                 <i class="fas fa-truck"></i>
@@ -1007,6 +1260,9 @@
                     </a>
                     <a href="tel:+201124178993" class="social-link" title="Phone">
                         <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="https://wa.me/201124178993" class="social-link" title="WhatsApp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
                 <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9em;">© 2025 Mohamed Mostafa Hassan. All rights reserved.</p>
