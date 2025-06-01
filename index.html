@@ -64,8 +64,8 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
@@ -150,6 +150,162 @@
         .whatsapp-btn:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Floating Download Buttons */
+        .floating-downloads {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .floating-download-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: bounceIn 0.8s ease;
+        }
+
+        .floating-download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .floating-download-btn.cv {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            animation-delay: 0.2s;
+        }
+
+        .floating-download-btn.portfolio {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Download Section in Main Content */
+        .downloads-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .downloads-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+
+        .downloads-section p {
+            color: #6c757d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .download-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #e74c3c;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .download-card.portfolio {
+            border-top-color: #9b59b6;
+        }
+
+        .download-card-icon {
+            font-size: 3em;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .download-card.portfolio .download-card-icon {
+            color: #9b59b6;
+        }
+
+        .download-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .download-card p {
+            color: #6c757d;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .download-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .download-card-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .download-card.portfolio .download-card-btn {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+        }
+
+        .download-card.portfolio .download-card-btn:hover {
+            box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
         }
 
         /* Navigation */
@@ -242,37 +398,213 @@
 
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            display: block;
+            margin-top: 30px;
+        }
+
+        .about-main {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(44, 62, 80, 0.3);
+        }
+
+        .about-main::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            animation: float 25s ease-in-out infinite;
+        }
+
+        .about-main::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 30s ease-in-out infinite reverse;
+        }
+
+        .about-intro {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .about-intro h3 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-intro .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
         .about-text {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #555;
+            position: relative;
+            z-index: 2;
+            font-size: 1.2em;
+            line-height: 1.9;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-text strong {
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8em;
+        }
+
+        .stat-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .stat-description {
+            color: #6c757d;
+            font-size: 0.95em;
+            line-height: 1.6;
         }
 
         .about-highlights {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #3498db;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .about-highlights h3 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.6em;
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-highlights h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border-radius: 2px;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .highlight-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: #2c3e50;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .highlight-item:hover {
+            background: rgba(52, 152, 219, 0.05);
+            transform: translateX(5px);
+            border-color: rgba(52, 152, 219, 0.3);
         }
 
         .highlight-item i {
             color: #3498db;
-            margin-right: 10px;
-            width: 20px;
+            margin-right: 15px;
+            width: 25px;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .highlight-item span {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95em;
         }
 
         /* Education Section */
@@ -690,6 +1022,10 @@
                 align-items: center;
             }
 
+            .downloads-grid {
+                grid-template-columns: 1fr;
+            }
+
             .nav ul {
                 flex-direction: column;
             }
@@ -703,6 +1039,47 @@
                 gap: 30px;
             }
 
+            .about-main {
+                padding: 30px 25px;
+            }
+
+            .about-intro h3 {
+                font-size: 1.8em;
+            }
+
+            .about-intro .subtitle {
+                font-size: 1.1em;
+            }
+
+            .about-text {
+                font-size: 1.05em;
+                line-height: 1.8;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-card {
+                padding: 25px 20px;
+            }
+
+            .stat-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5em;
+            }
+
+            .about-highlights {
+                padding: 30px 25px;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
             .exp-header, .edu-header {
                 flex-direction: column;
                 gap: 15px;
@@ -713,8 +1090,8 @@
             }
 
             .profile-img {
-                width: 120px;
-                height: 120px;
+                width: 140px;
+                height: 140px;
             }
 
             .whatsapp-btn {
@@ -723,6 +1100,32 @@
                 width: 50px;
                 height: 50px;
                 font-size: 20px;
+            }
+
+            .floating-downloads {
+                bottom: 80px;
+                right: 20px;
+            }
+
+            .floating-download-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-text {
+                padding: 25px;
+                font-size: 1.05em;
+                line-height: 1.8;
+            }
+
+            .about-highlights {
+                padding: 25px;
             }
         }
 
@@ -734,6 +1137,7 @@
         .section:nth-child(5) { animation-delay: 0.5s; }
         .section:nth-child(6) { animation-delay: 0.6s; }
         .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
@@ -741,6 +1145,16 @@
     <a href="https://wa.me/201124178993" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Floating Download Buttons -->
+    <div class="floating-downloads">
+        <a href="https://drive.google.com/uc?export=download&id=1A9Z4Z92sffe71hI63RLC-gLrc2R0m4Co" class="floating-download-btn cv" target="_blank" title="Download CV">
+            <i class="fas fa-file-pdf"></i>
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=1gLL1oOzCxOuGVkRDpIDLk4dcMFH9alEk" class="floating-download-btn portfolio" target="_blank" title="Download Portfolio">
+            <i class="fas fa-chart-bar"></i>
+        </a>
+    </div>
 
     <div class="container">
         <!-- Header -->
@@ -785,6 +1199,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#downloads">Downloads</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -795,37 +1210,71 @@
             <section id="about" class="section">
                 <h2>About Me</h2>
                 <div class="about-content">
-                    <div class="about-text">
-                        <p>I'm a <strong>Civil Engineer</strong> with extensive experience in large-scale construction project planning and a proven track record in strategic planning and AI transformation initiatives. Over the past year, I've successfully led enterprise-level AI transformation plans across multiple organizations.</p>
-                        
-                        <p>My expertise lies in designing intelligent systems using <strong>Microsoft Power Platform</strong> and <strong>Oracle Cloud technologies</strong> to replace manual, repetitive tasks with smart automation. I specialize in building predictive solutions powered by big data infrastructure that improve operational accuracy and support critical departments including planning, contracts, cost control, and HR.</p>
-                        
-                        <p>I focus on automating analytics workflows and enabling smarter decision-making through advanced data analytics and machine learning implementations.</p>
+                    <div class="about-main">
+                        <div class="about-intro">
+                            <h3>Strategic Planning Lead & AI Expert</h3>
+                            <p class="subtitle">Transforming Construction Industry Through Smart Technology</p>
+                        </div>
+                        <div class="about-text">
+                            <p>I'm a <strong>Civil Engineer</strong> with extensive experience in large-scale construction project planning and a proven track record in strategic planning and AI transformation initiatives. Over the past year, I've successfully led enterprise-level AI transformation plans across multiple organizations.</p>
+                            
+                            <p>My expertise lies in designing intelligent systems using <strong>Microsoft Power Platform</strong> and <strong>Oracle Cloud technologies</strong> to replace manual, repetitive tasks with smart automation. I specialize in building predictive solutions powered by big data infrastructure that improve operational accuracy and support critical departments including planning, contracts, cost control, and HR.</p>
+                            
+                            <p>I focus on automating analytics workflows and enabling smarter decision-making through advanced data analytics and machine learning implementations.</p>
+                        </div>
                     </div>
+
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="stat-title">45+ Projects</div>
+                            <div class="stat-description">Successfully managed and supported across multiple organizations with combined budgets exceeding 7B LE</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="stat-title">AI Solutions</div>
+                            <div class="stat-description">Developed 8+ AI-powered systems for correspondence analysis, recruitment, and predictive analytics</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-title">Process Automation</div>
+                            <div class="stat-description">Reduced routine work by 60% through intelligent automation and business intelligence systems</div>
+                        </div>
+                    </div>
+
                     <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-award"></i>
-                            <span>PMI Member & PMP® Certified</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fab fa-google"></i>
-                            <span>Google Certified Data Professional</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-brain"></i>
-                            <span>AI Business Solution Expert</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Strategic Planning Specialist</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-database"></i>
-                            <span>Big Data Analytics Expert</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-cogs"></i>
-                            <span>Process Automation Leader</span>
+                        <h3>🏆 Professional Highlights</h3>
+                        <div class="highlights-grid">
+                            <div class="highlight-item">
+                                <i class="fas fa-award"></i>
+                                <span>PMI Member & PMP® Certified</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fab fa-google"></i>
+                                <span>Google Certified Data Professional</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-brain"></i>
+                                <span>AI Business Solution Expert</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Strategic Planning Specialist</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-database"></i>
+                                <span>Big Data Analytics Expert</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>Process Automation Leader</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1275,6 +1724,40 @@
                                 <span class="tech-tag">Maintenance Planning</span>
                                 <span class="tech-tag">Automation</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Downloads Section -->
+            <section id="downloads" class="section">
+                <div class="downloads-section">
+                    <h2>📄 Download Documents</h2>
+                    <p>Access my complete CV and portfolio of data visualization dashboards showcasing real-world business intelligence solutions.</p>
+                    
+                    <div class="downloads-grid">
+                        <div class="download-card">
+                            <div class="download-card-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3>Complete CV & Resume</h3>
+                            <p>Comprehensive CV including all professional experience, certifications, education, and technical skills. Updated May 2025.</p>
+                            <a href="https://drive.google.com/uc?export=download&id=1A9Z4Z92sffe71hI63RLC-gLrc2R0m4Co" class="download-card-btn" target="_blank">
+                                <i class="fas fa-download"></i>
+                                Download CV
+                            </a>
+                        </div>
+
+                        <div class="download-card portfolio">
+                            <div class="download-card-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Dashboards Portfolio</h3>
+                            <p>Showcase of interactive dashboards and business intelligence solutions I've created for construction and project management industries.</p>
+                            <a href="https://drive.google.com/uc?export=download&id=1gLL1oOzCxOuGVkRDpIDLk4dcMFH9alEk" class="download-card-btn" target="_blank">
+                                <i class="fas fa-download"></i>
+                                Download Portfolio
+                            </a>
                         </div>
                     </div>
                 </div>
